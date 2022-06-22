@@ -11,8 +11,12 @@ class CategoryController extends Controller
     public function index()
     {
         return view('category.index', [
-            'categories' => Category::whereNotNull('name')->get(),
+            'title'     => 'Category',
+            'pretitle'  => 'Show'
         ]);
+        // return view('category.index', [
+        //     'categories' => Category::whereNotNull('name')->get(),
+        // ]);
     }
     
     public function create()
