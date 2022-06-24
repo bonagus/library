@@ -1,9 +1,10 @@
 <x-templates.default>
-    <x-slot:pretitle>Data Categories </x-slot:pretitle>
-    <x-slot:title>Categories </x-slot:title>
+    <x-slot:pretitle>Data Categories</x-slot:pretitle>
+    <x-slot:title>Categories</x-slot:title>
     <x-slot:page_action>
-        <a href="{{ route('category.create') }}" class="btn btn primary">Add Category </a>
+        <a href="{{ route('categories.create') }}" class="btn btn-primary">Add Category</a>
     </x-slot:page_action>
+
     <div class="col-12">
         <div class="card">
             <div class="table-responsive">
@@ -21,8 +22,8 @@
                                 <td>{{ $category->name }}</td>
                                 <td>{{ $category->slug }}</td>
                                 <td>
-                                    <a href="{{ route('category.edit', $category) }}" class="btn btn-info">Edit</a>
-                                    <form action="{{ route('category.destroy', $category) }}" method="post">
+                                    <a href="{{ route('categories.edit', $category) }}" class="btn btn-info">Edit</a>
+                                    <form action="{{ route('categories.destroy', $category) }}" method="post">
                                         @csrf
                                         @method('DELETE')
                                         <input type="submit" value="Delete" class="btn btn-danger">
@@ -33,6 +34,6 @@
                     </tbody>
                 </table>
             </div>
-         </div>
-     </div>
+        </div>
+    </div>
 </x-templates.default>

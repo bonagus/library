@@ -8,12 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
     use HasFactory;
-    
-    protected $fillable = [
-        'user_id',
-        'title',
-        'image',
-        'body'
-    ];
 
+    public $dates = ['published_at'];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function publisher()
+    {
+        return $this->belongsTo(Publisher::class);
+    }
 }

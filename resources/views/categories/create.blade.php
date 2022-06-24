@@ -4,7 +4,7 @@
 
     <div class="row row-cards">
         <div class="col-12">
-            <form action="{{ route('category.store') }}" class="card" method="post">
+            <form action="{{ route('categories.store') }}" class="card" method="post">
                 @csrf
                 <div class="card-header">Add Category</div>
                 <div class="card-body">
